@@ -1,0 +1,9 @@
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.vcxproj.AssemblyReference.cache
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.MyForm.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.vcxproj.GenerateResource.cache
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.dashboard.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.deleterecord.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.expensecategory.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.expenseentry.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.expenses.resources
+D:\Visual Studio Projects\Project1\Project1\x64\Debug\Project1.incomeentry.resources

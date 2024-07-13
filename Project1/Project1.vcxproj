@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -113,6 +113,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -123,15 +126,18 @@
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dbclass.h" />
     <ClInclude Include="deleterecord.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="expensecategory.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="expensemanager.h" />
     <ClInclude Include="expenseentry.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="expenseobject.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,6 +150,8 @@
     <ClInclude Include="incomeentry.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="User.h" />
+    <ClInclude Include="usermanager.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="dashboard.resx">

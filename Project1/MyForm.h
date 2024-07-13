@@ -1,5 +1,6 @@
 #pragma once
 #include"dashboard.h"
+#include "Usermanager.h" 
 namespace Project1 {
 
 	using namespace System;
@@ -330,6 +331,7 @@ namespace Project1 {
 	}
 
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		/*
 		if (textBox1->Text == "admin")
 		{
 			if (textBox2->Text == "root") {
@@ -348,6 +350,30 @@ namespace Project1 {
 		else {
 			MessageBox::Show("Incorrect Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
+		*/
+		try
+		{
+			UserManager^ usermanager = gcnew UserManager();
+			String^ username = textBox1->Text;
+			String^ email = "newuser@example.com";
+			String^ password = textBox2->Text;
+
+			if (usermanager->addUser(email,username,password))
+			{
+				MessageBox::Show("User added successfully!");
+			}
+			else
+			{
+				MessageBox::Show("Failed to add user.");
+			}
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("An error occurred: " + ex->Message);
+		}
+
+
+
 	}
 	
 

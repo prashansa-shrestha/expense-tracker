@@ -10,6 +10,8 @@ Assembly Project1, Version=0.0.*, Culture=Invariant Language (Invariant Country)
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Assembly MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d: 
+	hash=None, flags=None
 Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
@@ -26,6 +28,18 @@ Class Project1.expenses: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Project1.dashboard: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class DatabaseManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    connect(): PrivateScope, Public, HideBySig
+    disconnect(): PrivateScope, Public, HideBySig
+    executeQuery(String): PrivateScope, Public, HideBySig
+    executeNonQuery(MySqlCommand): PrivateScope, Public, HideBySig
+    getConnection(): PrivateScope, Public, HideBySig
+Class UserManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    addUser(String, String, String): PrivateScope, Public, HideBySig
 Class Project1.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

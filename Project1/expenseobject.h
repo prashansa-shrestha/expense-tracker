@@ -5,20 +5,23 @@ using namespace System;
 public ref class Expense
 {
 public:
-    int ExpenseID;
+  
     DateTime Date;
-    double Amount;
-    String^ Description;
-    int CategoryID;
-
+    float Amount;
+    String^ title;
+    String^ category;
+    int userid;
+    int expenseid;
     Expense() {}
 
-    Expense(int expenseID, DateTime date, double amount, String^ description, int categoryID)
+    Expense( int expenseid,String^ title, String^ category, DateTime date, double Amount, int userid)
     {
-        this->ExpenseID = expenseID;
+        this->expenseid = expenseid;
         this->Date = date;
-        this->Amount = amount;
-        this->Description = description;
-        this->CategoryID = categoryID;
+        this->Amount = Amount;
+        this->category = category;
+        this->userid = userid;
+        this->title = title;
     }
 };
+

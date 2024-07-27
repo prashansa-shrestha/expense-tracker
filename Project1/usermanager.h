@@ -1,6 +1,6 @@
 #pragma once
 #include "dbclass.h"
-
+#include "User.h"
 public ref class UserManager
 {
 private:
@@ -14,6 +14,7 @@ public:
 
 
 
+    
     bool addUser(String^ email, String^ username, String^ password)
     {
         try
@@ -34,6 +35,7 @@ public:
             dbManager->disconnect();
 
             return (result > 0); // Return true if insertion was successful
+
         }
         catch (MySqlException^ ex)
         {
@@ -45,5 +47,37 @@ public:
     }
 
 
+
+    User^ AuthenticateUser(String^ username, String^ password)
+    {
+        try
+        {
+            dbManager->connect();
+            String^ query = "SELECT userid,username FROM users WHERE username = @username AND password = @password";
+            MySqlCommand^ cmd = gcnew MySqlCommand(query, dbManager->getConnection());
+            cmd->Parameters->AddWithValue("@username", username);
+            cmd->Parameters->AddWithValue("@password", password);
+
+            MySqlDataReader^ reader = cmd->ExecuteReader();
+            if (reader->Read())
+            {
+                int userid = reader->GetInt32(reader->GetOrdinal("userid"));
+                String^ retrievedUsername = reader->GetString(reader->GetOrdinal("username"));
+               
+                return gcnew User(userid, retrievedUsername);
+            }
+            return nullptr;
+        }
+        catch (Exception^ ex)
+        {
+            // Handle or log the exception
+            Console::WriteLine("Error authenticating user: " + ex->Message);
+            return nullptr;
+        }
+        finally
+        {
+            dbManager->disconnect();
+        }
+    }
     // Add other methods as needed, such as updateUser, deleteUser, etc.
 };

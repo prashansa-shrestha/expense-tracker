@@ -25,21 +25,49 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class Project1.expenses: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Project1.dashboard: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class Project1.expenseentry: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetExpenseData(): PrivateScope, Public, HideBySig
+Class Expense: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, System.DateTime, Double, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.DateTime Date : Public
+    Single Amount : Public
+    System.String title : Public
+    System.String category : Public
+    Int32 userid : Public
+    Int32 expenseid : Public
 Class DatabaseManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     connect(): PrivateScope, Public, HideBySig
     disconnect(): PrivateScope, Public, HideBySig
-    executeQuery(String): PrivateScope, Public, HideBySig
+    executeQuery(MySqlCommand): PrivateScope, Public, HideBySig
     executeNonQuery(MySqlCommand): PrivateScope, Public, HideBySig
     getConnection(): PrivateScope, Public, HideBySig
+Class User: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 userid : Public
+    System.String username : Public
+Class ExpenseManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    addExpense(String, String, DateTime, Single, Int32): PrivateScope, Public, HideBySig
+    getExpenses(): PrivateScope, Public, HideBySig
 Class UserManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     addUser(String, String, String): PrivateScope, Public, HideBySig
+    AuthenticateUser(String, String): PrivateScope, Public, HideBySig
+Class Project1.dashboard: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(User): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    UpdateUI(): PrivateScope, Public, HideBySig
 Class Project1.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

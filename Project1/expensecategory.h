@@ -112,6 +112,7 @@ namespace Project1 {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Add Expense";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &expensecategory::button1_Click);
 			// 
 			// label5
 			// 
@@ -196,5 +197,7 @@ namespace Project1 {
 	}
 	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

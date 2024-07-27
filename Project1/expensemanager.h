@@ -1,36 +1,49 @@
 #pragma once
 #include "dbclass.h"
 #include "expenseobject.h"
-/*#include "User.h"*/
-
+#include "User.h"
+using namespace System::Collections::Generic;
 public ref class ExpenseManager
 {
 private:
     DatabaseManager^ dbManager;
-   /* User^ currentUser;*/
+    User^ currentUser;
+
 
 public:
-    ExpenseManager(DatabaseManager^ db) : dbManager(db) {}
+    ExpenseManager(User^ user)  {
+        currentUser = user;
+        dbManager = gcnew DatabaseManager();
+    }
+
+   
+
+
+
+
+
+
 
     /*void setCurrentUser(User^ user) { currentUser = user; }*/
 
-    bool addExpense(Expense^ expense)
+    bool addExpense(String^ title, String^ category, System::DateTime Date, float Amount, int userid)
     {
         try
         {
             dbManager->connect();
-            String^ query = "INSERT INTO Expenses (UserID, Date, Amount, Description, CategoryID) VALUES (@UserID, @Date, @Amount, @Description, @CategoryID)";
-            SqlCommand^ cmd = gcnew SqlCommand(query, dbManager->getConnection());
+            String^ query = "INSERT INTO expenses (title,category,Amount,Date,userid) VALUES (@title, @category, @Amount, @Date,@userid)";
+            MySqlCommand^ cmd = gcnew MySqlCommand(query, dbManager->getConnection());
 
-            cmd->Parameters->AddWithValue("@UserID", currentUser->UserID);
-            cmd->Parameters->AddWithValue("@Date", expense->Date);
-            cmd->Parameters->AddWithValue("@Amount", expense->Amount);
-            cmd->Parameters->AddWithValue("@Description", expense->Description);
-            cmd->Parameters->AddWithValue("@CategoryID", expense->CategoryID);
+            cmd->Parameters->AddWithValue("@title", title);
+            cmd->Parameters->AddWithValue("@category", category);
+            cmd->Parameters->AddWithValue("@Amount", Amount);
+            cmd->Parameters->AddWithValue("@Date",Date);
+            cmd->Parameters->AddWithValue("@userid", userid);
 
             int result = dbManager->executeNonQuery(cmd);
             return (result > 0);
         }
+
         catch (Exception^ ex)
         {
             // Handle or log the exception
@@ -41,27 +54,48 @@ public:
             dbManager->disconnect();
         }
     }
-    /*
 
+    
+
+    
     List<Expense^>^ getExpenses()
     {
         List<Expense^>^ expenses = gcnew List<Expense^>();
         try
         {
             dbManager->connect();
-            String^ query = "SELECT * FROM Expenses WHERE UserID = @UserID";
-            SqlCommand^ cmd = gcnew SqlCommand(query, dbManager->getConnection());
-            cmd->Parameters->AddWithValue("@UserID", currentUser->UserID);
+            String^ query = "SELECT * FROM Expenses WHERE userid = @userid";
+            MySqlCommand^ cmd = gcnew MySqlCommand(query, dbManager->getConnection());
+            cmd->Parameters->AddWithValue("@userid", currentUser->userid);
 
-            SqlDataReader^ reader = dbManager->executeQuery(cmd);
+            MySqlDataReader^ reader = dbManager->executeQuery(cmd);
+
+            int expenseidOrdinal = reader->GetOrdinal("expenseid");
+            int dateOrdinal = reader->GetOrdinal("Date");
+            int amountOrdinal = reader->GetOrdinal("Amount");
+            int categoryOrdinal = reader->GetOrdinal("category");
+            int useridOrdinal = reader->GetOrdinal("userid");
+            int titleOrdinal = reader->GetOrdinal("title");
+
             while (reader->Read())
             {
                 Expense^ expense = gcnew Expense();
-                expense->ExpenseID = safe_cast<int>(reader["ExpenseID"]);
+                /*
+                expense->expenseid = safe_cast<int>(reader["expenseid"]);
                 expense->Date = safe_cast<DateTime>(reader["Date"]);
                 expense->Amount = safe_cast<double>(reader["Amount"]);
-                expense->Description = reader["Description"]->ToString();
-                expense->CategoryID = safe_cast<int>(reader["CategoryID"]);
+                expense->category = reader["category"]->ToString();
+                expense->userid = safe_cast<int>(reader["userid"]);
+                */
+
+                expense->expenseid = reader->GetInt32(expenseidOrdinal);
+                expense->Date = reader->GetDateTime(dateOrdinal);
+                expense->Amount = reader->GetDouble(amountOrdinal);
+                expense->title = reader->GetString(titleOrdinal);
+                expense->category = reader->GetString(categoryOrdinal);
+                expense->userid = reader->GetInt32(expenseidOrdinal);
+
+
 
                 expenses->Add(expense);
             }
@@ -77,7 +111,7 @@ public:
         }
         return expenses;
     }
-    */
+    
 
     /*
     bool updateExpense(Expense^ expense)
@@ -109,7 +143,7 @@ public:
         }
     }
     */
-
+    /*
     bool deleteExpense(int expenseId)
     {
         try
@@ -133,5 +167,5 @@ public:
         {
             dbManager->disconnect();
         }
-    }
+    } */
 };

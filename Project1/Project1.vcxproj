@@ -124,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="set1.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dbclass.h" />
@@ -150,6 +153,15 @@
     <ClInclude Include="incomeentry.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyForm1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="set1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="User.h" />
     <ClInclude Include="usermanager.h" />
   </ItemGroup>
@@ -174,6 +186,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="incomeentry.resx">
       <DependentUpon>incomeentry.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm1.resx">
+      <DependentUpon>MyForm1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="set1.resx">
+      <DependentUpon>set1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

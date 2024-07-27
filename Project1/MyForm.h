@@ -1,6 +1,8 @@
 #pragma once
 #include"dashboard.h"
-#include "Usermanager.h" 
+#include "usermanager.h" 
+#include"User.h"
+#include"dbclass.h"
 namespace Project1 {
 
 	using namespace System;
@@ -15,10 +17,17 @@ namespace Project1 {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+
+	private:
+		User^ currentUser;
+		UserManager^ usermanager;
 	public:
 		MyForm(void)
 		{
 			InitializeComponent();
+			usermanager = gcnew UserManager();
+		
+			
 			pnlTerms->Hide();
 			//
 			//TODO: Add the constructor code here
@@ -229,7 +238,7 @@ namespace Project1 {
 			this->pnlTerms->Controls->Add(this->label5);
 			this->pnlTerms->Location = System::Drawing::Point(1, 0);
 			this->pnlTerms->Name = L"pnlTerms";
-			this->pnlTerms->Size = System::Drawing::Size(732, 403);
+			this->pnlTerms->Size = System::Drawing::Size(732, 152);
 			this->pnlTerms->TabIndex = 9;
 			this->pnlTerms->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::pnlTerms_Paint);
 			this->pnlTerms->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::MyForm_MouseDown);
@@ -280,7 +289,7 @@ namespace Project1 {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(732, 403);
+			this->ClientSize = System::Drawing::Size(732, 404);
 			this->Controls->Add(this->pnlTerms);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -327,11 +336,18 @@ namespace Project1 {
 		}
 	}
 	private: System::Void button2_Click_2(System::Object^ sender, System::EventArgs^ e) {
-		Application::Exit();
+		/*Application::Exit();*/
+		dashboard^ dash = gcnew dashboard(currentUser);
+		dash->Show();
+		this->Hide();
 	}
+
+	
+
 
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		/*
+		signin garda
 		if (textBox1->Text == "admin")
 		{
 			if (textBox2->Text == "root") {
@@ -351,28 +367,39 @@ namespace Project1 {
 			MessageBox::Show("Incorrect Username", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		*/
-		try
-		{
-			UserManager^ usermanager = gcnew UserManager();
-			String^ username = textBox1->Text;
-			String^ email = "newuser@example.com";
-			String^ password = textBox2->Text;
 
-			if (usermanager->addUser(email,username,password))
-			{
-				MessageBox::Show("User added successfully!");
-			}
-			else
-			{
-				MessageBox::Show("Failed to add user.");
-			}
-		}
-		catch (Exception^ ex)
+		String^ username = textBox1->Text;
+		String^ password = textBox2->Text;
+
+		// Validate input
+		if (String::IsNullOrEmpty(username) || String::IsNullOrEmpty(password))
 		{
-			MessageBox::Show("An error occurred: " + ex->Message);
+			MessageBox::Show("Please enter both username and password.");
+			return;
 		}
 
+		// Attempt to authenticate user
+		
+	
+		currentUser = usermanager->AuthenticateUser(username, password);
 
+		if (currentUser != nullptr)
+		{
+			// Authentication successful
+
+			dashboard^ dash = gcnew dashboard(currentUser);
+			dash->Show();
+			
+			this->Hide();
+
+			// Create managers with the user object
+		}
+		else
+		{
+			// Authentication failed
+			MessageBox::Show("Sign in failed. Please check your username and password.");
+		}
+		
 
 	}
 	

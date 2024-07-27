@@ -21,6 +21,15 @@
     <ClCompile Include="MyForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyForm1.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="set1.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -58,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="expenseobject.h">
       <Filter>Header Files\CustomClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="set1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

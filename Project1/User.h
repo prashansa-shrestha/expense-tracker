@@ -5,11 +5,11 @@ using namespace System;
 public ref class User
 {
 public:
-    property int UserID;
-    property String^ Username;
-    property String^ Email;
-    property String^ PasswordHash;
+    int userid;
+    String^ username;
+  
 
-    User(int id, String^ username, String^ email, String^ passwordHash)
-        : UserID(id), Username(username), Email(email), PasswordHash(passwordHash) {}
+
+    User(int id, String^ username)
+        : userid(id), username(username){}
 };

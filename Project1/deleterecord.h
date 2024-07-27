@@ -124,10 +124,13 @@ namespace Project1 {
 			this->Controls->Add(this->label1);
 			this->Name = L"deleterecord";
 			this->Text = L"deleterecord";
+			this->Load += gcnew System::EventHandler(this, &deleterecord::deleterecord_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void deleterecord_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

@@ -3,10 +3,14 @@
 
 #using <System.Data.dll>
 
+
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 using namespace MySql::Data::MySqlClient;
+
+
+
 
 public ref class DatabaseManager
 {
@@ -21,6 +25,9 @@ public:
         // Constructor initializes the SqlConnection object
         connection = gcnew MySqlConnection(connectionString);
     }
+
+
+
 
     void connect()
     {
@@ -44,13 +51,14 @@ public:
         }
     }
 
-    MySqlDataReader^ executeQuery(String^ query)
+    MySqlDataReader^ executeQuery(MySqlCommand^ command)
     {
-        // Create a new SqlCommand with the query and connection
-        MySqlCommand^ command = gcnew MySqlCommand(query, connection);
+  
         // Execute the command and return a SqlDataReader
         return command->ExecuteReader();
     }
+
+
 
     int executeNonQuery(MySqlCommand^ command)
     {
@@ -63,6 +71,7 @@ public:
         // Return the SqlConnection object for use in other classes
         return connection;
     }
+
 
 };
 

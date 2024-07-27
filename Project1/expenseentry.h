@@ -39,12 +39,15 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
+
+	private: System::Windows::Forms::Button^ addentrybtn;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	protected:
 
 	private:
@@ -65,12 +68,11 @@ namespace Project1 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->addentrybtn = (gcnew System::Windows::Forms::Button());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -128,17 +130,6 @@ namespace Project1 {
 			this->label5->TabIndex = 5;
 			this->label5->Text = L"Date";
 			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(53, 293);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(68, 25);
-			this->label6->TabIndex = 6;
-			this->label6->Text = L"Month";
-			// 
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -147,15 +138,6 @@ namespace Project1 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(266, 24);
 			this->textBox1->TabIndex = 7;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(149, 133);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(266, 24);
-			this->textBox2->TabIndex = 8;
 			// 
 			// textBox3
 			// 
@@ -166,35 +148,56 @@ namespace Project1 {
 			this->textBox3->Size = System::Drawing::Size(266, 24);
 			this->textBox3->TabIndex = 9;
 			// 
-			// textBox4
+			// addentrybtn
 			// 
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->addentrybtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(149, 246);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(266, 24);
-			this->textBox4->TabIndex = 10;
+			this->addentrybtn->Location = System::Drawing::Point(212, 303);
+			this->addentrybtn->Name = L"addentrybtn";
+			this->addentrybtn->Size = System::Drawing::Size(87, 47);
+			this->addentrybtn->TabIndex = 12;
+			this->addentrybtn->Text = L"Add";
+			this->addentrybtn->UseVisualStyleBackColor = true;
+			this->addentrybtn->Click += gcnew System::EventHandler(this, &expenseentry::addentrybtnn_Click);
 			// 
-			// textBox5
+			// dateTimePicker1
 			// 
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->dateTimePicker1->CalendarFont = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(149, 295);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(266, 24);
-			this->textBox5->TabIndex = 11;
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->dateTimePicker1->Location = System::Drawing::Point(149, 244);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(1);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(266, 27);
+			this->dateTimePicker1->TabIndex = 13;
+			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &expenseentry::dateTimePicker1_ValueChanged);
+			// 
+			// domainUpDown1
+			// 
+			this->domainUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->domainUpDown1->Items->Add(L"Housing");
+			this->domainUpDown1->Items->Add(L"Food");
+			this->domainUpDown1->Items->Add(L"Utilities");
+			this->domainUpDown1->Items->Add(L"Health");
+			this->domainUpDown1->Items->Add(L"Entertainment");
+			this->domainUpDown1->Items->Add(L"Groceries");
+			this->domainUpDown1->Location = System::Drawing::Point(149, 136);
+			this->domainUpDown1->Name = L"domainUpDown1";
+			this->domainUpDown1->Size = System::Drawing::Size(266, 26);
+			this->domainUpDown1->TabIndex = 14;
+			this->domainUpDown1->Text = L"Housing";
+			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &expenseentry::domainUpDown1_SelectedItemChanged);
 			// 
 			// expenseentry
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(478, 365);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
+			this->ClientSize = System::Drawing::Size(499, 375);
+			this->Controls->Add(this->domainUpDown1);
+			this->Controls->Add(this->dateTimePicker1);
+			this->Controls->Add(this->addentrybtn);
 			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -202,10 +205,38 @@ namespace Project1 {
 			this->Controls->Add(this->label1);
 			this->Name = L"expenseentry";
 			this->Text = L"expenseentry";
+			this->Load += gcnew System::EventHandler(this, &expenseentry::expenseentry_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	
+private: System::Void addentrybtn_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+public:
+	
+
+	// Public function to get expense data as an array
+	array<System::Object^>^ GetExpenseData()
+	{
+		array<System::Object^>^ expenseData = gcnew array<System::Object^>(5);
+		expenseData[0] = textBox1->Text;
+		expenseData[1] = domainUpDown1->Text;
+		expenseData[2] = textBox3->Text;
+		expenseData[3] = dateTimePicker1->Value;
+		return expenseData;
+	}
+private: System::Void addentrybtnn_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	Close();
+
+}
+private: System::Void expenseentry_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void domainUpDown1_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

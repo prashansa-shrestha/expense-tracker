@@ -37,14 +37,15 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label3;
+
 
 	private:
 		/// <summary>
@@ -61,26 +62,25 @@ namespace Project1 {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label1->Location = System::Drawing::Point(141, 32);
+			this->label1->Location = System::Drawing::Point(133, 32);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(185, 38);
+			this->label1->Size = System::Drawing::Size(192, 38);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Income Entry";
 			// 
@@ -97,19 +97,6 @@ namespace Project1 {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Title";
 			this->label2->Click += gcnew System::EventHandler(this, &incomeentry::label2_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
-				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label3->Location = System::Drawing::Point(29, 148);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(83, 28);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Amount";
 			// 
 			// label4
 			// 
@@ -173,12 +160,18 @@ namespace Project1 {
 			this->textBox4->Size = System::Drawing::Size(266, 24);
 			this->textBox4->TabIndex = 8;
 			// 
-			// panel1
+			// label3
 			// 
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(455, 333);
-			this->panel1->TabIndex = 9;
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label3->Location = System::Drawing::Point(29, 148);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(83, 28);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"Amount";
 			// 
 			// incomeentry
 			// 
@@ -196,7 +189,6 @@ namespace Project1 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->panel1);
 			this->Name = L"incomeentry";
 			this->Text = L"recordentry";
 			this->Load += gcnew System::EventHandler(this, &incomeentry::incomeentry_Load);

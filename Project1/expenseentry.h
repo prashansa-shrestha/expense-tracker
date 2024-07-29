@@ -80,6 +80,8 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->label1->Location = System::Drawing::Point(172, 24);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(163, 32);
@@ -91,6 +93,8 @@ namespace Project1 {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->label2->Location = System::Drawing::Point(73, 81);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(48, 25);
@@ -102,6 +106,8 @@ namespace Project1 {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->label3->Location = System::Drawing::Point(33, 131);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(88, 25);
@@ -113,6 +119,8 @@ namespace Project1 {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->label4->Location = System::Drawing::Point(42, 188);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(79, 25);
@@ -124,6 +132,8 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->label5->Location = System::Drawing::Point(70, 246);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(51, 25);
@@ -152,6 +162,8 @@ namespace Project1 {
 			// 
 			this->addentrybtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->addentrybtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->addentrybtn->Location = System::Drawing::Point(212, 303);
 			this->addentrybtn->Name = L"addentrybtn";
 			this->addentrybtn->Size = System::Drawing::Size(87, 47);
@@ -192,6 +204,8 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->ClientSize = System::Drawing::Size(499, 375);
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->dateTimePicker1);
@@ -203,6 +217,8 @@ namespace Project1 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->ForeColor = System::Drawing::Color::Chocolate;
+			this->IsMdiContainer = true;
 			this->Name = L"expenseentry";
 			this->Text = L"expenseentry";
 			this->Load += gcnew System::EventHandler(this, &expenseentry::expenseentry_Load);

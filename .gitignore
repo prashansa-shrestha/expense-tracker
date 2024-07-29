@@ -1,7 +1,0 @@
-# Ignore Visual Studio temporary files, build results, and
-# folder configuration options
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates

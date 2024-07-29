@@ -24,7 +24,11 @@ namespace Project1 {
 
 		// expensemanager, incomemanager haru 
 		User^ currentUser;
-		ExpenseManager^ expensemanager;
+	private: System::Windows::Forms::Panel^ panel11;
+	private: System::Windows::Forms::Panel^ panel12;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
+		   ExpenseManager^ expensemanager;
 
 	public:
 		dashboard(User^ user)
@@ -75,8 +79,8 @@ namespace Project1 {
 	private: System::Windows::Forms::Panel^ panelUserIcon;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Label^ label3;
+
+
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button5;
@@ -253,6 +257,7 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(dashboard::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
@@ -261,8 +266,8 @@ namespace Project1 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->panel11 = (gcnew System::Windows::Forms::Panel());
+			this->panel12 = (gcnew System::Windows::Forms::Panel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel10 = (gcnew System::Windows::Forms::Panel());
@@ -297,6 +302,13 @@ namespace Project1 {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->expensePanel = (gcnew System::Windows::Forms::Panel());
+			this->expcategory = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->addexpbtn = (gcnew System::Windows::Forms::Button());
+			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->backbtn = (gcnew System::Windows::Forms::Button());
 			this->entertainbtn = (gcnew System::Windows::Forms::Button());
 			this->groceriesbtn = (gcnew System::Windows::Forms::Button());
 			this->healthbtn = (gcnew System::Windows::Forms::Button());
@@ -306,17 +318,11 @@ namespace Project1 {
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label44 = (gcnew System::Windows::Forms::Label());
-			this->expcategory = (gcnew System::Windows::Forms::Panel());
-			this->addexpbtn = (gcnew System::Windows::Forms::Button());
-			this->label50 = (gcnew System::Windows::Forms::Label());
-			this->label51 = (gcnew System::Windows::Forms::Label());
-			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->backbtn = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->expParent = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
-			this->panel3->SuspendLayout();
+			this->panel11->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel10->SuspendLayout();
 			this->panel9->SuspendLayout();
@@ -327,12 +333,15 @@ namespace Project1 {
 			this->panel6->SuspendLayout();
 			this->expensePanel->SuspendLayout();
 			this->expcategory->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->expParent->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->panel1->Controls->Add(this->button7);
 			this->panel1->Controls->Add(this->button6);
 			this->panel1->Controls->Add(this->button5);
@@ -340,8 +349,7 @@ namespace Project1 {
 			this->panel1->Controls->Add(this->button3);
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Controls->Add(this->panel3);
-			this->panel1->Controls->Add(this->label2);
+			this->panel1->Controls->Add(this->panel11);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
@@ -351,112 +359,149 @@ namespace Project1 {
 			// 
 			// button7
 			// 
-			this->button7->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(39)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(119)));
+			this->button7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.BackgroundImage")));
+			this->button7->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(94, 664);
+			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->button7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.Image")));
+			this->button7->Location = System::Drawing::Point(93, 680);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(156, 61);
 			this->button7->TabIndex = 9;
-			this->button7->Text = L"Sign Out";
-			this->button7->UseVisualStyleBackColor = true;
+			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &dashboard::button7_Click);
 			// 
 			// button6
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(0, 529);
+			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button6->Location = System::Drawing::Point(0, 569);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(328, 50);
+			this->button6->Size = System::Drawing::Size(328, 61);
 			this->button6->TabIndex = 8;
 			this->button6->Text = L"See Stats";
-			this->button6->UseVisualStyleBackColor = true;
+			this->button6->UseVisualStyleBackColor = false;
 			// 
 			// button5
 			// 
-			this->button5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(0, 473);
+			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button5->Location = System::Drawing::Point(0, 502);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(328, 50);
+			this->button5->Size = System::Drawing::Size(328, 61);
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"Set Goals";
-			this->button5->UseVisualStyleBackColor = true;
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &dashboard::button5_Click);
 			// 
 			// button4
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(0, 417);
+			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button4->Location = System::Drawing::Point(0, 435);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(328, 50);
+			this->button4->Size = System::Drawing::Size(328, 61);
 			this->button4->TabIndex = 6;
 			this->button4->Text = L"Expenses";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &dashboard::button4_Click);
 			// 
 			// button3
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(0, 361);
+			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button3->Location = System::Drawing::Point(0, 368);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(328, 50);
+			this->button3->Size = System::Drawing::Size(328, 61);
 			this->button3->TabIndex = 5;
 			this->button3->Text = L"Income";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &dashboard::button3_Click);
 			// 
 			// button2
 			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(0, 305);
+			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button2->Location = System::Drawing::Point(0, 301);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(328, 50);
+			this->button2->Size = System::Drawing::Size(328, 61);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Transactions";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &dashboard::button2_Click);
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(220)),
+				static_cast<System::Int32>(static_cast<System::Byte>(92)));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(0, 249);
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->button1->Location = System::Drawing::Point(0, 234);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(328, 50);
+			this->button1->Size = System::Drawing::Size(328, 61);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Dashboard";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &dashboard::button1_Click);
 			// 
-			// panel3
+			// panel11
 			// 
-			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(100, 55);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(118, 109);
-			this->panel3->TabIndex = 2;
+			this->panel11->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel11.BackgroundImage")));
+			this->panel11->Controls->Add(this->panel12);
+			this->panel11->Controls->Add(this->label2);
+			this->panel11->Location = System::Drawing::Point(62, 12);
+			this->panel11->Name = L"panel11";
+			this->panel11->Size = System::Drawing::Size(212, 200);
+			this->panel11->TabIndex = 10;
 			// 
-			// label3
+			// panel12
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 47));
-			this->label3->Location = System::Drawing::Point(20, 10);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(78, 90);
-			this->label3->TabIndex = 0;
-			this->label3->Text = L"J";
-			this->label3->Click += gcnew System::EventHandler(this, &dashboard::label3_Click);
+			this->panel12->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel12.BackgroundImage")));
+			this->panel12->Location = System::Drawing::Point(66, 73);
+			this->panel12->Name = L"panel12";
+			this->panel12->Size = System::Drawing::Size(74, 72);
+			this->panel12->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::SystemColors::Control;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15));
-			this->label2->Location = System::Drawing::Point(97, 167);
+			this->label2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label2->Location = System::Drawing::Point(38, 152);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(121, 29);
+			this->label2->Size = System::Drawing::Size(120, 32);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Jane Doe";
+			this->label2->Click += gcnew System::EventHandler(this, &dashboard::label2_Click);
 			// 
 			// panel2
 			// 
@@ -840,6 +885,106 @@ namespace Project1 {
 			this->expensePanel->TabIndex = 1;
 			this->expensePanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::expensePanel_Paint);
 			// 
+			// expcategory
+			// 
+			this->expcategory->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->expcategory->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->expcategory->Controls->Add(this->pictureBox1);
+			this->expcategory->Controls->Add(this->addexpbtn);
+			this->expcategory->Controls->Add(this->label50);
+			this->expcategory->Controls->Add(this->label51);
+			this->expcategory->Controls->Add(this->label52);
+			this->expcategory->Controls->Add(this->backbtn);
+			this->expcategory->Location = System::Drawing::Point(2, 3);
+			this->expcategory->Name = L"expcategory";
+			this->expcategory->Size = System::Drawing::Size(1146, 773);
+			this->expcategory->TabIndex = 34;
+			this->expcategory->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::expcategory_Paint);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(170, 210);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(746, 400);
+			this->pictureBox1->TabIndex = 21;
+			this->pictureBox1->TabStop = false;
+			// 
+			// addexpbtn
+			// 
+			this->addexpbtn->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->addexpbtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(163)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
+			this->addexpbtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->addexpbtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->addexpbtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addexpbtn.Image")));
+			this->addexpbtn->Location = System::Drawing::Point(857, 62);
+			this->addexpbtn->Name = L"addexpbtn";
+			this->addexpbtn->Size = System::Drawing::Size(197, 61);
+			this->addexpbtn->TabIndex = 14;
+			this->addexpbtn->UseVisualStyleBackColor = false;
+			this->addexpbtn->Click += gcnew System::EventHandler(this, &dashboard::addexpbtn_Click);
+			// 
+			// label50
+			// 
+			this->label50->AutoSize = true;
+			this->label50->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label50->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label50->Location = System::Drawing::Point(679, 153);
+			this->label50->Name = L"label50";
+			this->label50->Size = System::Drawing::Size(69, 41);
+			this->label50->TabIndex = 13;
+			this->label50->Text = L"xxx";
+			this->label50->Click += gcnew System::EventHandler(this, &dashboard::label50_Click);
+			// 
+			// label51
+			// 
+			this->label51->AutoSize = true;
+			this->label51->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label51->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label51->Location = System::Drawing::Point(348, 153);
+			this->label51->Name = L"label51";
+			this->label51->Size = System::Drawing::Size(339, 41);
+			this->label51->TabIndex = 12;
+			this->label51->Text = L"Expense Contribution: ";
+			// 
+			// label52
+			// 
+			this->label52->AutoSize = true;
+			this->label52->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label52->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label52->Location = System::Drawing::Point(35, 41);
+			this->label52->Name = L"label52";
+			this->label52->Size = System::Drawing::Size(156, 32);
+			this->label52->TabIndex = 11;
+			this->label52->Text = L"Category >>";
+			this->label52->Click += gcnew System::EventHandler(this, &dashboard::label52_Click);
+			// 
+			// backbtn
+			// 
+			this->backbtn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->backbtn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"backbtn.BackgroundImage")));
+			this->backbtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->backbtn->Location = System::Drawing::Point(917, 660);
+			this->backbtn->Name = L"backbtn";
+			this->backbtn->Size = System::Drawing::Size(145, 61);
+			this->backbtn->TabIndex = 20;
+			this->backbtn->UseVisualStyleBackColor = false;
+			this->backbtn->Click += gcnew System::EventHandler(this, &dashboard::backbtn_Click);
+			// 
 			// entertainbtn
 			// 
 			this->entertainbtn->BackColor = System::Drawing::Color::Transparent;
@@ -959,77 +1104,6 @@ namespace Project1 {
 			this->label44->TabIndex = 18;
 			this->label44->Text = L"Choose a Category";
 			// 
-			// expcategory
-			// 
-			this->expcategory->BackColor = System::Drawing::SystemColors::Control;
-			this->expcategory->Controls->Add(this->addexpbtn);
-			this->expcategory->Controls->Add(this->label50);
-			this->expcategory->Controls->Add(this->label51);
-			this->expcategory->Controls->Add(this->label52);
-			this->expcategory->Controls->Add(this->backbtn);
-			this->expcategory->Location = System::Drawing::Point(2, 3);
-			this->expcategory->Name = L"expcategory";
-			this->expcategory->Size = System::Drawing::Size(1146, 773);
-			this->expcategory->TabIndex = 34;
-			this->expcategory->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::expcategory_Paint);
-			// 
-			// addexpbtn
-			// 
-			this->addexpbtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 10, System::Drawing::FontStyle::Bold));
-			this->addexpbtn->Location = System::Drawing::Point(883, 62);
-			this->addexpbtn->Name = L"addexpbtn";
-			this->addexpbtn->Size = System::Drawing::Size(144, 44);
-			this->addexpbtn->TabIndex = 14;
-			this->addexpbtn->Text = L"Add Expense";
-			this->addexpbtn->UseVisualStyleBackColor = true;
-			this->addexpbtn->Click += gcnew System::EventHandler(this, &dashboard::addexpbtn_Click);
-			// 
-			// label50
-			// 
-			this->label50->AutoSize = true;
-			this->label50->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label50->Location = System::Drawing::Point(619, 146);
-			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(46, 29);
-			this->label50->TabIndex = 13;
-			this->label50->Text = L"xxx";
-			// 
-			// label51
-			// 
-			this->label51->AutoSize = true;
-			this->label51->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label51->Location = System::Drawing::Point(405, 147);
-			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(219, 28);
-			this->label51->TabIndex = 12;
-			this->label51->Text = L"Expense Contribution: ";
-			// 
-			// label52
-			// 
-			this->label52->AutoSize = true;
-			this->label52->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label52->Location = System::Drawing::Point(41, 44);
-			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(150, 32);
-			this->label52->TabIndex = 11;
-			this->label52->Text = L"Category >>";
-			this->label52->Click += gcnew System::EventHandler(this, &dashboard::label52_Click);
-			// 
-			// backbtn
-			// 
-			this->backbtn->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->backbtn->Location = System::Drawing::Point(931, 643);
-			this->backbtn->Name = L"backbtn";
-			this->backbtn->Size = System::Drawing::Size(96, 35);
-			this->backbtn->TabIndex = 20;
-			this->backbtn->Text = L"Back";
-			this->backbtn->UseVisualStyleBackColor = true;
-			this->backbtn->Click += gcnew System::EventHandler(this, &dashboard::backbtn_Click);
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -1062,9 +1136,8 @@ namespace Project1 {
 			this->Text = L"MyForm1";
 			this->Load += gcnew System::EventHandler(this, &dashboard::dashboard_Load);
 			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
-			this->panel3->ResumeLayout(false);
-			this->panel3->PerformLayout();
+			this->panel11->ResumeLayout(false);
+			this->panel11->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel10->ResumeLayout(false);
 			this->panel10->PerformLayout();
@@ -1084,6 +1157,7 @@ namespace Project1 {
 			this->expensePanel->PerformLayout();
 			this->expcategory->ResumeLayout(false);
 			this->expcategory->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
 			this->expParent->ResumeLayout(false);
 			this->ResumeLayout(false);
@@ -1511,8 +1585,15 @@ namespace Project1 {
 		expcategory->Hide();
 		expensePanel->Show();
 	}
+
 	private: System::Void label52_Click(System::Object^ sender, System::EventArgs^ e) {
+		Label^ clickedLabel = dynamic_cast<Label^>(sender);
+		if (clickedLabel != nullptr) {
+			// Set the label's background color to transparent
+			clickedLabel->BackColor = System::Drawing::Color::Transparent;
+		}
 	}
+
 
 	private: System::Void addexpbtn_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -1550,7 +1631,19 @@ namespace Project1 {
 
 	private: System::Void label49_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void label50_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
 
 

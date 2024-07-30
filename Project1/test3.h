@@ -635,11 +635,11 @@ namespace Project1 {
 			this->panel2->Controls->Add(this->panel9);
 			this->panel2->Controls->Add(this->panel8);
 			this->panel2->Controls->Add(this->panel5);
-			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Controls->Add(this->button9);
 			this->panel2->Controls->Add(this->button8);
 			this->panel2->Controls->Add(this->panel7);
 			this->panel2->Controls->Add(this->panel6);
+			this->panel2->Controls->Add(this->panel4);
 			this->panel2->Location = System::Drawing::Point(9, 0);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1220, 773);

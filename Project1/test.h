@@ -531,6 +531,7 @@ namespace Project1 {
 			this->panel10->Name = L"panel10";
 			this->panel10->Size = System::Drawing::Size(155, 138);
 			this->panel10->TabIndex = 0;
+			this->panel10->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::panel10_Paint);
 			// 
 			// label17
 			// 
@@ -769,6 +770,7 @@ namespace Project1 {
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(831, 408);
 			this->panel4->TabIndex = 2;
+			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::panel4_Paint);
 			// 
 			// label18
 			// 
@@ -1647,6 +1649,10 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label51_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panel4_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void panel10_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

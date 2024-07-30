@@ -49,6 +49,7 @@ namespace Project1 {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Panel^ panel2;
 	protected:
 
 	private:
@@ -64,6 +65,7 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(expenseentry::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -75,7 +77,9 @@ namespace Project1 {
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -87,7 +91,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label1->Location = System::Drawing::Point(142, 21);
+			this->label1->Location = System::Drawing::Point(185, 20);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(216, 41);
 			this->label1->TabIndex = 1;
@@ -102,11 +106,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label2->Location = System::Drawing::Point(73, 81);
+			this->label2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label2.Image")));
+			this->label2->Location = System::Drawing::Point(63, 26);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(51, 28);
+			this->label2->Size = System::Drawing::Size(56, 28);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Title";
+			this->label2->Text = L"Title:";
 			// 
 			// label3
 			// 
@@ -117,11 +122,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label3->Location = System::Drawing::Point(33, 131);
+			this->label3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label3.Image")));
+			this->label3->Location = System::Drawing::Point(23, 76);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(94, 28);
+			this->label3->Size = System::Drawing::Size(99, 28);
 			this->label3->TabIndex = 3;
-			this->label3->Text = L"Category";
+			this->label3->Text = L"Category:";
 			// 
 			// label4
 			// 
@@ -132,11 +138,12 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label4->Location = System::Drawing::Point(42, 188);
+			this->label4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label4.Image")));
+			this->label4->Location = System::Drawing::Point(32, 133);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(86, 28);
+			this->label4->Size = System::Drawing::Size(91, 28);
 			this->label4->TabIndex = 4;
-			this->label4->Text = L"Amount";
+			this->label4->Text = L"Amount:";
 			// 
 			// label5
 			// 
@@ -147,28 +154,29 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label5->Location = System::Drawing::Point(70, 246);
+			this->label5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label5.Image")));
+			this->label5->Location = System::Drawing::Point(60, 191);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(54, 28);
+			this->label5->Size = System::Drawing::Size(59, 28);
 			this->label5->TabIndex = 5;
-			this->label5->Text = L"Date";
+			this->label5->Text = L"Date:";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(149, 83);
+			this->textBox1->Location = System::Drawing::Point(139, 28);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(266, 24);
+			this->textBox1->Size = System::Drawing::Size(287, 24);
 			this->textBox1->TabIndex = 7;
 			// 
 			// textBox3
 			// 
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(149, 188);
+			this->textBox3->Location = System::Drawing::Point(139, 133);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(266, 24);
+			this->textBox3->Size = System::Drawing::Size(287, 24);
 			this->textBox3->TabIndex = 9;
 			// 
 			// addentrybtn
@@ -179,11 +187,11 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->addentrybtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
 				static_cast<System::Int32>(static_cast<System::Byte>(61)));
-			this->addentrybtn->Location = System::Drawing::Point(212, 303);
+			this->addentrybtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addentrybtn.Image")));
+			this->addentrybtn->Location = System::Drawing::Point(230, 346);
 			this->addentrybtn->Name = L"addentrybtn";
-			this->addentrybtn->Size = System::Drawing::Size(87, 47);
+			this->addentrybtn->Size = System::Drawing::Size(156, 61);
 			this->addentrybtn->TabIndex = 12;
-			this->addentrybtn->Text = L"Add";
 			this->addentrybtn->UseVisualStyleBackColor = false;
 			this->addentrybtn->Click += gcnew System::EventHandler(this, &expenseentry::addentrybtnn_Click);
 			// 
@@ -193,10 +201,10 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(149, 244);
+			this->dateTimePicker1->Location = System::Drawing::Point(139, 189);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(1);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(266, 30);
+			this->dateTimePicker1->Size = System::Drawing::Size(287, 30);
 			this->dateTimePicker1->TabIndex = 13;
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &expenseentry::dateTimePicker1_ValueChanged);
 			// 
@@ -210,9 +218,9 @@ namespace Project1 {
 			this->domainUpDown1->Items->Add(L"Health");
 			this->domainUpDown1->Items->Add(L"Entertainment");
 			this->domainUpDown1->Items->Add(L"Groceries");
-			this->domainUpDown1->Location = System::Drawing::Point(149, 136);
+			this->domainUpDown1->Location = System::Drawing::Point(139, 81);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(266, 30);
+			this->domainUpDown1->Size = System::Drawing::Size(287, 30);
 			this->domainUpDown1->TabIndex = 14;
 			this->domainUpDown1->Text = L"Housing";
 			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &expenseentry::domainUpDown1_SelectedItemChanged);
@@ -221,28 +229,37 @@ namespace Project1 {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
 				static_cast<System::Int32>(static_cast<System::Byte>(61)));
-			this->panel1->Controls->Add(this->domainUpDown1);
-			this->panel1->Controls->Add(this->dateTimePicker1);
+			this->panel1->Controls->Add(this->panel2);
 			this->panel1->Controls->Add(this->addentrybtn);
-			this->panel1->Controls->Add(this->textBox3);
-			this->panel1->Controls->Add(this->textBox1);
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->label3);
-			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(502, 385);
+			this->panel1->Size = System::Drawing::Size(555, 434);
 			this->panel1->TabIndex = 16;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &expenseentry::panel1_Paint);
+			// 
+			// panel2
+			// 
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->Controls->Add(this->domainUpDown1);
+			this->panel2->Controls->Add(this->dateTimePicker1);
+			this->panel2->Controls->Add(this->textBox3);
+			this->panel2->Controls->Add(this->textBox1);
+			this->panel2->Controls->Add(this->label5);
+			this->panel2->Controls->Add(this->label4);
+			this->panel2->Controls->Add(this->label3);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Location = System::Drawing::Point(53, 76);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(471, 258);
+			this->panel2->TabIndex = 15;
 			// 
 			// expenseentry
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Highlight;
-			this->ClientSize = System::Drawing::Size(499, 375);
+			this->ClientSize = System::Drawing::Size(557, 427);
 			this->Controls->Add(this->panel1);
 			this->ForeColor = System::Drawing::Color::Chocolate;
 			this->IsMdiContainer = true;
@@ -251,6 +268,8 @@ namespace Project1 {
 			this->Load += gcnew System::EventHandler(this, &expenseentry::expenseentry_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}

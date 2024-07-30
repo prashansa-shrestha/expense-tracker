@@ -89,13 +89,13 @@ namespace Project1 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label2->Location = System::Drawing::Point(185, 114);
+			this->label2->Location = System::Drawing::Point(169, 114);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(276, 32);
+			this->label2->Size = System::Drawing::Size(315, 38);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Expense Contribution: ";
 			this->label2->Click += gcnew System::EventHandler(this, &expensecategory::label2_Click);
@@ -103,13 +103,13 @@ namespace Project1 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label3->Location = System::Drawing::Point(450, 114);
+			this->label3->Location = System::Drawing::Point(469, 114);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(54, 32);
+			this->label3->Size = System::Drawing::Size(62, 38);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"xxx";
 			// 
@@ -120,6 +120,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(490, 25);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(198, 60);

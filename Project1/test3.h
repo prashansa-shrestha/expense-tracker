@@ -386,8 +386,6 @@ namespace Project1 {
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
@@ -396,6 +394,8 @@ namespace Project1 {
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->expensePanel = (gcnew System::Windows::Forms::Panel());
 			this->entertainbtn = (gcnew System::Windows::Forms::Button());
 			this->groceriesbtn = (gcnew System::Windows::Forms::Button());
@@ -461,8 +461,8 @@ namespace Project1 {
 			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->panel14 = (gcnew System::Windows::Forms::Panel());
 			this->panel16 = (gcnew System::Windows::Forms::Panel());
-			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->panel25 = (gcnew System::Windows::Forms::Panel());
+			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -470,9 +470,9 @@ namespace Project1 {
 			this->panel9->SuspendLayout();
 			this->panel8->SuspendLayout();
 			this->panel5->SuspendLayout();
-			this->panel4->SuspendLayout();
 			this->panel7->SuspendLayout();
 			this->panel6->SuspendLayout();
+			this->panel4->SuspendLayout();
 			this->expensePanel->SuspendLayout();
 			this->expcategory->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -844,32 +844,6 @@ namespace Project1 {
 			this->label4->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->label4->Click += gcnew System::EventHandler(this, &dashboard::label4_Click);
 			// 
-			// panel4
-			// 
-			this->panel4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel4.BackgroundImage")));
-			this->panel4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->panel4->Controls->Add(this->label18);
-			this->panel4->Location = System::Drawing::Point(20, 15);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(878, 396);
-			this->panel4->TabIndex = 2;
-			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::panel4_Paint);
-			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
-				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label18.Image")));
-			this->label18->Location = System::Drawing::Point(284, 9);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(315, 41);
-			this->label18->TabIndex = 0;
-			this->label18->Text = L"Income V/S Expenses";
-			this->label18->Click += gcnew System::EventHandler(this, &dashboard::label18_Click);
-			// 
 			// button9
 			// 
 			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(188)), static_cast<System::Int32>(static_cast<System::Byte>(71)),
@@ -981,6 +955,32 @@ namespace Project1 {
 			this->label5->Text = L"Total Expenses";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->label5->Click += gcnew System::EventHandler(this, &dashboard::label5_Click);
+			// 
+			// panel4
+			// 
+			this->panel4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel4.BackgroundImage")));
+			this->panel4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->panel4->Controls->Add(this->label18);
+			this->panel4->Location = System::Drawing::Point(20, 15);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(878, 396);
+			this->panel4->TabIndex = 2;
+			this->panel4->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::panel4_Paint);
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label18->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
+				static_cast<System::Int32>(static_cast<System::Byte>(239)));
+			this->label18->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"label18.Image")));
+			this->label18->Location = System::Drawing::Point(284, 9);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(315, 41);
+			this->label18->TabIndex = 0;
+			this->label18->Text = L"Income V/S Expenses";
+			this->label18->Click += gcnew System::EventHandler(this, &dashboard::label18_Click);
 			// 
 			// expensePanel
 			// 
@@ -1825,7 +1825,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
 			this->label23->Location = System::Drawing::Point(200, 18);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(271, 46);
+			this->label23->Size = System::Drawing::Size(264, 45);
 			this->label23->TabIndex = 10;
 			this->label23->Text = L"Income Sources";
 			this->label23->Click += gcnew System::EventHandler(this, &dashboard::label23_Click);
@@ -1854,6 +1854,14 @@ namespace Project1 {
 			this->panel16->TabIndex = 31;
 			this->panel16->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::panel16_Paint);
 			// 
+			// panel25
+			// 
+			this->panel25->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel25.BackgroundImage")));
+			this->panel25->Location = System::Drawing::Point(55, 79);
+			this->panel25->Name = L"panel25";
+			this->panel25->Size = System::Drawing::Size(587, 557);
+			this->panel25->TabIndex = 11;
+			// 
 			// label29
 			// 
 			this->label29->AutoSize = true;
@@ -1868,14 +1876,6 @@ namespace Project1 {
 			this->label29->TabIndex = 10;
 			this->label29->Text = L"Transactions";
 			this->label29->Click += gcnew System::EventHandler(this, &dashboard::label29_Click);
-			// 
-			// panel25
-			// 
-			this->panel25->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel25.BackgroundImage")));
-			this->panel25->Location = System::Drawing::Point(55, 79);
-			this->panel25->Name = L"panel25";
-			this->panel25->Size = System::Drawing::Size(587, 557);
-			this->panel25->TabIndex = 11;
 			// 
 			// dashboard
 			// 
@@ -1901,12 +1901,12 @@ namespace Project1 {
 			this->panel8->PerformLayout();
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
+			this->panel4->ResumeLayout(false);
+			this->panel4->PerformLayout();
 			this->expensePanel->ResumeLayout(false);
 			this->expensePanel->PerformLayout();
 			this->expcategory->ResumeLayout(false);

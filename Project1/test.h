@@ -505,6 +505,8 @@ namespace Project1 {
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(29)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)));
 			this->panel2->Controls->Add(this->panel10);
 			this->panel2->Controls->Add(this->panel9);
 			this->panel2->Controls->Add(this->panel8);
@@ -879,9 +881,9 @@ namespace Project1 {
 			this->expensePanel->Controls->Add(this->label33);
 			this->expensePanel->Controls->Add(this->label34);
 			this->expensePanel->Controls->Add(this->label44);
-			this->expensePanel->Location = System::Drawing::Point(0, 0);
+			this->expensePanel->Location = System::Drawing::Point(1138, 0);
 			this->expensePanel->Name = L"expensePanel";
-			this->expensePanel->Size = System::Drawing::Size(1148, 773);
+			this->expensePanel->Size = System::Drawing::Size(10, 773);
 			this->expensePanel->TabIndex = 1;
 			this->expensePanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::expensePanel_Paint);
 			// 
@@ -898,9 +900,9 @@ namespace Project1 {
 			this->expcategory->Controls->Add(this->label51);
 			this->expcategory->Controls->Add(this->label52);
 			this->expcategory->Controls->Add(this->backbtn);
-			this->expcategory->Location = System::Drawing::Point(2, 3);
+			this->expcategory->Location = System::Drawing::Point(774, 3);
 			this->expcategory->Name = L"expcategory";
-			this->expcategory->Size = System::Drawing::Size(1146, 773);
+			this->expcategory->Size = System::Drawing::Size(0, 773);
 			this->expcategory->TabIndex = 34;
 			this->expcategory->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &dashboard::expcategory_Paint);
 			// 
@@ -923,7 +925,7 @@ namespace Project1 {
 			this->addexpbtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
 			this->addexpbtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"addexpbtn.Image")));
-			this->addexpbtn->Location = System::Drawing::Point(857, 62);
+			this->addexpbtn->Location = System::Drawing::Point(284, 62);
 			this->addexpbtn->Name = L"addexpbtn";
 			this->addexpbtn->Size = System::Drawing::Size(197, 61);
 			this->addexpbtn->TabIndex = 14;
@@ -933,13 +935,13 @@ namespace Project1 {
 			// label50
 			// 
 			this->label50->AutoSize = true;
-			this->label50->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label50->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label50->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label50->Location = System::Drawing::Point(679, 153);
+			this->label50->Location = System::Drawing::Point(693, 153);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(69, 41);
+			this->label50->Size = System::Drawing::Size(85, 51);
 			this->label50->TabIndex = 13;
 			this->label50->Text = L"xxx";
 			this->label50->Click += gcnew System::EventHandler(this, &dashboard::label50_Click);
@@ -947,15 +949,16 @@ namespace Project1 {
 			// label51
 			// 
 			this->label51->AutoSize = true;
-			this->label51->Font = (gcnew System::Drawing::Font(L"Segoe UI", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label51->Font = (gcnew System::Drawing::Font(L"Segoe UI", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label51->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(231)), static_cast<System::Int32>(static_cast<System::Byte>(236)),
 				static_cast<System::Int32>(static_cast<System::Byte>(239)));
-			this->label51->Location = System::Drawing::Point(348, 153);
+			this->label51->Location = System::Drawing::Point(287, 153);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(339, 41);
+			this->label51->Size = System::Drawing::Size(429, 51);
 			this->label51->TabIndex = 12;
 			this->label51->Text = L"Expense Contribution: ";
+			this->label51->Click += gcnew System::EventHandler(this, &dashboard::label51_Click);
 			// 
 			// label52
 			// 
@@ -1642,6 +1645,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label51_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
